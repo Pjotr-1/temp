@@ -8,11 +8,11 @@ The code is dependent of two libraries;
 - RFduino library
 
 The file structure might look like;
-  Documents/Arduino/libraries
+- Documents/Arduino/libraries
     GyverTM1637/...
     Temp/Temp.h
-  Documents/Arduino/Temp
+- Documents/Arduino/Temp
     Device0/Device0.ino
     Host/Host.ino
-  Documents/ArduinoData
+- Documents/ArduinoData
     RFduino stuff
