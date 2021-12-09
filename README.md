@@ -6,4 +6,3 @@ It consists of one outdoor sensor unit (device0) and one indoor display unit (ho
 The code is dependent of two libraries;
 - TM1637 4-digit display - GyverTM1637
 - RFduino library
-- 
