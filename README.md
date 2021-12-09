@@ -30,10 +30,11 @@ Host components:
 
 Sensor components:
 - RFduino RFD22301 SMT Module
+- Analog Devices TMP36
+- 100nF ceramic capacitor
+- Battery Pack 2xAAA batteries
 
 Programming of Host and Sensor
 - RFduino RFD22121 USB Programmer
-- Analog Devices TMP36
-- 100nF ceramic capacitor
 
 NOTE: RFduino has been discontinued and is no longer available 
