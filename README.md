@@ -17,16 +17,20 @@ The file structure might look like;
 - Documents/ArduinoData
     RFduino stuff
 
-The RFduino is based on an nRF51-series chip. For this project chapter 31. Analog to Digital Converter (ADC) is useful.
+The RFduino is based on an nRF51-series chip.
+For this project chapter 31.Analog to Digital Converter (ADC) is useful.
 The RFduino and the TMP36 datasheets are also provided.
 
 Arduino IDE version 1.8.16 (Windows 10)
+
 Host components:
 - RFduino RFD22102 DIP
 - TM1637 Display
 - Battery Pack 2xAA batteries
+
 Sensor components:
 - RFduino RFD22301 SMT Module
+
 Programming of Host and Sensor
 - RFduino RFD22121 USB Programmer
 - Analog Devices TMP36
