@@ -6,3 +6,13 @@ It consists of one outdoor sensor unit (device0) and one indoor display unit (ho
 The code is dependent of two libraries;
 - TM1637 4-digit display - GyverTM1637
 - RFduino library
+
+The file structure might look like;
+  Documents/Arduino/libraries
+    GyverTM1637/...
+    Temp/Temp.h
+  Documents/Arduino/Temp
+    Device0/Device0.ino
+    Host/Host.ino
+  Documents/ArduinoData
+    RFduino stuff
