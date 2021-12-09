@@ -16,3 +16,6 @@ The file structure might look like;
     Host/Host.ino
 - Documents/ArduinoData
     RFduino stuff
+
+The RFduino is based on an nRF51-series chip. For this project chapter 31. Analog to Digital Converter (ADC) is useful.
+The RFduino specification and the TMP36 specification are also provided.
