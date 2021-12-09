@@ -31,4 +31,5 @@ Programming of Host and Sensor
 - RFduino RFD22121 USB Programmer
 - Analog Devices TMP36
 - 100nF ceramic capacitor
+
 NOTE: RFduino has been discontinued and is no longer available 
