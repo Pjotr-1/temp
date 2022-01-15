@@ -40,11 +40,14 @@ void setup() {
 void loop() {
   if (packet.counter < INITIAL_COUNT) {
     // Send packets more often after reset
-    delay(PACKET_INTERVAL_INITIAL);
+    RFduino_ULPDelay( MILLISECONDS(PACKET_INTERVAL_INITIAL) );  // NEW in version 2
+    //delay(PACKET_INTERVAL_INITIAL);                           // REMOVED in version 2
   } else {
     // Send packets with normal interval
-    delay(PACKET_INTERVAL);
+    RFduino_ULPDelay( MILLISECONDS(PACKET_INTERVAL) );          // NEW in version 2
+    //delay(PACKET_INTERVAL);                                   // REMOVED in version 2
   }
+  delay(WAKEUP_DELAY);                                          // NEW in version 2
   packet.battery = readVdd();
   packet.temp_cpu = RFduino_temperature(CELSIUS);
   packet.sensor_adc = readAnalogGPIO_1();

@@ -13,6 +13,7 @@
 #define PACKET_INTERVAL 60000           // Milliseconds. Normal transmission interval.
 #define PACKET_INTERVAL_INITIAL 1000    // Milliseconds. Transmission interval before counter reaches INITIAL_COUNT.
 #define INITIAL_COUNT 600               // Number of transmissions with interval PACKET_INTERVAL_INITIAL.
+#define WAKEUP_DELAY  10                // Milliseconds. Give unit some time to snooze. NEW in version 2.
 
 // Host display unit
 #define DISPLAY_INTERVAL 1100           // Milliseconds. Display interval.
