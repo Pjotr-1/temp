@@ -21,8 +21,8 @@ static float cal_temp = 0.0;            // Calibrated temperature in degrees Cel
 static short sensor_adc = 0;            // Sensor value ADC 0-1023
 
 // TM1637 Display Pin numbers
-#define CLK 2   // GPIO2
-#define DIO 3   // GPIO3
+#define CLK 2   // GPIO2  (YELLOW)
+#define DIO 3   // GPIO3  (ORANGE)
 static GyverTM1637 disp(CLK, DIO);
 static const int digit[] = {_0, _1, _2, _3, _4, _5, _6, _7, _8, _9};
 
@@ -156,12 +156,12 @@ void debug_printout() {
 #endif
   Serial.println();
   Serial.print("RSSI= "); Serial.println(last_rssi);
-  Serial.print("TEMP= "); Serial.println(cal_temp);
   if (last_rssi != 999) {
     if (!(packet_recv.ver_major == VER_MAJOR) || !(packet_recv.ver_minor == VER_MINOR)) {
       Serial.println("ERROR: Device0 must be rebuilt!");
     }
-    Serial.print("COUNTER="); Serial.println(packet_recv.counter);
+    Serial.print("-----------> COUNTER= "); Serial.println(packet_recv.counter);
+    Serial.print("TEMP= "); Serial.println(cal_temp);
     Serial.print("ADC="); Serial.println(packet_recv.sensor_adc);
     Serial.print("CPU="); Serial.println(packet_recv.temp_cpu);
     Serial.print("BAT="); Serial.print(packet_recv.battery); Serial.println(" mV");

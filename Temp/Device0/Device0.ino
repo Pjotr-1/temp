@@ -23,7 +23,7 @@
 
 #include <Temp.h>
 
-//#define DEBUG           // Normally undefined
+//#define DEBUG         // Normally undefined
 #define TMP36_PIN 1     // Sensor TMP36 AOUT -> GPIO #1
 
 static device_t role = DEVICE0;   // Sensor unit
@@ -41,11 +41,9 @@ void loop() {
   if (packet.counter < INITIAL_COUNT) {
     // Send packets more often after reset
     RFduino_ULPDelay( MILLISECONDS(PACKET_INTERVAL_INITIAL) );  // NEW in version 2
-    //delay(PACKET_INTERVAL_INITIAL);                           // REMOVED in version 2
   } else {
     // Send packets with normal interval
     RFduino_ULPDelay( MILLISECONDS(PACKET_INTERVAL) );          // NEW in version 2
-    //delay(PACKET_INTERVAL);                                   // REMOVED in version 2
   }
   delay(WAKEUP_DELAY);                                          // NEW in version 2
   packet.battery = readVdd();
@@ -53,6 +51,7 @@ void loop() {
   packet.sensor_adc = readAnalogGPIO_1();
   packet.counter++;
   (void)RFduinoGZLL.sendToHost((char *)&packet, sizeof(packet));
+  debug_loop();
 }
 
 /*
@@ -79,15 +78,20 @@ short readAnalogGPIO_1() {
    DEBUG PROCEDURES
 */
 void debug_setup(int code) {
-#ifndef DEBUG
-  return;
-#endif
+#ifdef DEBUG
   Serial.begin(SERIAL_MONITOR_BAUD_RATE);
   Serial.println("Device0");
   if (code != 0) {
-    Serial.print("ErrCode=");
+    Serial.print("Error Code=");
     Serial.println(code);
   }
+#endif
+}
+
+void debug_loop(void) {
+#ifdef DEBUG
+  Serial.println(packet.counter);
+#endif
 }
 
 // End of file
